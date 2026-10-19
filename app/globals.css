@@ -1,0 +1,105 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* Dark only. Warm near-black canvas; shadcn semantic tokens mapped to it. */
+:root {
+  --background: #1b1918;
+  --foreground: #f4f4f2;
+  --card: #211e1d;
+  --card-foreground: #f4f4f2;
+  --popover: #262321;
+  --popover-foreground: #f4f4f2;
+  --primary: #f4f4f2;
+  --primary-foreground: #1b1918;
+  --secondary: #2c2927;
+  --secondary-foreground: #f4f4f2;
+  --muted: #2c2927;
+  --muted-foreground: #b3adaa;
+  --accent: #2c2927;
+  --accent-foreground: #f4f4f2;
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: rgba(255, 255, 255, 0.11);
+  --input: rgba(255, 255, 255, 0.14);
+  --ring: #a8a29e;
+  --radius: 0.75rem;
+
+  --subtle: #8f8985;
+  --graph-0: rgba(255, 255, 255, 0.06);
+  --graph-1: #0e4429;
+  --graph-2: #006d32;
+  --graph-3: #26a641;
+  --graph-4: #39d353;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --font-heading: var(--font-sans);
+  --font-sans: var(--font-sans);
+  --font-display: var(--font-geist-pixel-square);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --color-subtle: var(--subtle);
+  --color-graph-0: var(--graph-0);
+  --color-graph-1: var(--graph-1);
+  --color-graph-2: var(--graph-2);
+  --color-graph-3: var(--graph-3);
+  --color-graph-4: var(--graph-4);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply font-sans;
+    font-size: 100%; /* phones: 16px. Every rem scales with this value. */
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+  @media (min-width: 40rem) {
+    html { font-size: 106.25%; } /* tablets: 17px */
+  }
+  @media (min-width: 64rem) {
+    html { font-size: 112.5%; } /* desktop: 18px */
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+  ::selection {
+    background: rgba(255, 255, 255, 0.22);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+}
+
+/* wavy section divider */
+.wave {
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='6' viewBox='0 0 12 6'%3E%3Cpath d='M0 3Q3 0 6 3T12 3' fill='none' stroke='%23ffffff' stroke-opacity='.2'/%3E%3C/svg%3E") repeat-x center;
+}
