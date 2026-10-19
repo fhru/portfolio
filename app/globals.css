@@ -78,15 +78,12 @@
   }
   html {
     @apply font-sans;
-    font-size: 100%; /* phones: 16px. Every rem scales with this value. */
+    font-size: 87.5%; /* phones: 14px. Every rem scales with this value. */
     scroll-behavior: smooth;
     scroll-padding-top: 5rem;
   }
   @media (min-width: 40rem) {
-    html { font-size: 106.25%; } /* tablets: 17px */
-  }
-  @media (min-width: 64rem) {
-    html { font-size: 112.5%; } /* desktop: 18px */
+    html { font-size: 100%; } /* tablet and desktop: 16px */
   }
   body {
     @apply bg-background text-foreground antialiased;
