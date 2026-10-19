@@ -5,7 +5,7 @@ export default async function Contributions({ user }) {
   let data;
   try {
     const res = await fetch(`https://github-contributions-api.jogruber.de/v4/${user}?y=all`, {
-      next: { revalidate: 86400 },
+      next: { revalidate: 3600 },
     });
     if (!res.ok) return null;
     data = await res.json();

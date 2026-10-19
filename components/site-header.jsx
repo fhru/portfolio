@@ -98,10 +98,10 @@ export default function SiteHeader({ name, email, github, linkedin, items }) {
         <List className="size-5 text-muted-foreground sm:hidden" weight="light" aria-hidden="true" />
       </button>
 
-      <CommandDialog open={open} onOpenChange={setOpen} title="Navigation" description="Jump to a section or open a link">
+      <CommandDialog open={open} onOpenChange={setOpen} title="Navigation" description="Jump to a section or open a link" className="top-[6%] sm:top-1/3">
         <Command>
         <CommandInput placeholder="Jump to..." />
-        <CommandList>
+        <CommandList className="max-h-[38dvh] sm:max-h-72">
           <CommandEmpty>No results.</CommandEmpty>
           <CommandGroup heading="Sections">
             {items.map((n) => {
